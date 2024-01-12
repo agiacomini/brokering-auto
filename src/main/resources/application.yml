@@ -1,1 +1,27 @@
+## SERVER CONFIGURATION
+server:
+  port: 5051
 
+## SPRING FRAMEWORK CONFIGURATIONS
+spring:
+
+  # APPLICATION
+  application:
+    name: Brokering-Auto
+
+  # DATABASE - DBMS
+  sql:
+    init:
+      mode: always
+      platform: postgres
+  datasource:
+    password: admin
+    url: jdbc:postgresql://localhost:6000/brokering-auto-database
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true

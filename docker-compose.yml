@@ -6,7 +6,7 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.21.0.0/24
+        - subnet: 182.21.0.0/24
 
 services:
   pgsql:
@@ -14,12 +14,12 @@ services:
     restart: no
             # always
             # unless-stopped (avvia il container all'avvio del docker)
-    container_name: postgresql
+    container_name: postgresqlContainer
 #    volumes:
 #      - psdb-volume:/var/lib/postgresql/data (definisce i volumi dove saranno posizionate le immagini )
     networks: 
       ntpgsql:
-        ipv4_address: 172.21.0.2
+        ipv4_address: 182.21.0.2
     ports:
       # - "6000:5432"
       - target: 5432
@@ -27,19 +27,19 @@ services:
         protocol: tcp
         mode: host
     environment:
-      # - POSTGRES_USER=andr3a.giacomini@gmail.com
+      #- POSTGRES_USER=andr3a.giacomini@gmail.com
       - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=alpha-shop
+      - POSTGRES_DB=brokering-auto-database
 
   pgadmin:
     image: dpage/pgadmin4
     restart: no
             # always
             # unless-stopped (avvia il container all'avvio del docker)
-    container_name: pgadmin4
+    container_name: pgadmin4Container
     networks:
       ntpgsql:
-        ipv4_address: 172.21.0.3
+        ipv4_address: 182.21.0.3
     ports:
       # - "80:80"
       - target: 80
