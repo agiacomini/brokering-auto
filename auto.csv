@@ -1,0 +1,10 @@
+true,0 a 5K,1,true,benzina
+true,da 5K a 10K,3,true,benzina
+true,oltre i 10K,5,true,benzina
+true,oltre i 10K,3,false,gasolio
+false,0 a 5K,1,true,elettrica
+false,da 5K a 10K,3,true,elettrica
+false,oltre i 10K,1,true,elettrica
+false,0 a 5K,1,true,gasolio
+true,da 5K a 10K,5,false,benzina
+false,da 5K a 10K,5,true,benzina

@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "1b067a42-8e79-49f1-8697-a0b52e6e35dd",
+		"name": "brokering-auto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4985586"
+	},
+	"item": [
+		{
+			"name": "GetAllAuto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5051/api/v1/auto/select/all",
+					"host": [
+						"localhost"
+					],
+					"port": "5051",
+					"path": [
+						"api",
+						"v1",
+						"auto",
+						"select",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewAuto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quattroPerquattro\": true,\n    \"fasciaDiPrezzo\": \"da 5K a 10K\",\n    \"anzianita\": 5,\n    \"cambioAutomatico\": true,\n    \"alimentazione\": \"gasolio\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5051/api/v1/auto/insert",
+					"host": [
+						"localhost"
+					],
+					"port": "5051",
+					"path": [
+						"api",
+						"v1",
+						"auto",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAutoById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quattroPerQuattro\": true,\n    \"fasciaDiPrezzo\": \"5-10\",\n    \"anzianita\": 3,\n    \"cambioAutomatico\": true,\n    \"alimentazione\": \"elettrica\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5051/api/v1/auto/update/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5051",
+					"path": [
+						"api",
+						"v1",
+						"auto",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAutoById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5051/api/v1/auto/delete/13",
+					"host": [
+						"localhost"
+					],
+					"port": "5051",
+					"path": [
+						"api",
+						"v1",
+						"auto",
+						"delete",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddAutosByCsvFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5051/api/v1/auto/insert/csv",
+					"host": [
+						"localhost"
+					],
+					"port": "5051",
+					"path": [
+						"api",
+						"v1",
+						"auto",
+						"insert",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllAutosByFilter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5051/api/v1/auto/select?anzianita=3&cambioAutomatico=true&fasciaDiPrezzo=da 5K a 10K",
+					"host": [
+						"localhost"
+					],
+					"port": "5051",
+					"path": [
+						"api",
+						"v1",
+						"auto",
+						"select"
+					],
+					"query": [
+						{
+							"key": "anzianita",
+							"value": "3"
+						},
+						{
+							"key": "cambioAutomatico",
+							"value": "true"
+						},
+						{
+							"key": "fasciaDiPrezzo",
+							"value": "da 5K a 10K",
+							"description": "Possibili fascie: 0 a 5K, da 5K a 10K, oltre i 10K"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
