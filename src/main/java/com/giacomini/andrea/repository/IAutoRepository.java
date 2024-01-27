@@ -13,6 +13,8 @@ public interface IAutoRepository extends JpaRepository<Auto, Long> {
     // Query Method
     List<Auto> findAutosByAnzianitaEqualsAndCambioAutomaticoEquals(Integer anzianita, boolean cambioAutomatico);
     List<Auto> findAllByAnzianitaAndCambioAutomatico(Integer anzianita, boolean cambioAutomatico);
+
+    List<Auto> findAllById(Integer id);
     List<Auto> findAutosByAnzianitaAndAlimentazione(Integer anzianita, String alimentazione);
 
     // JPQL
